@@ -1,5 +1,7 @@
-import 'package:auth_ui/views/login.dart';
+import 'package:auth_ui/views/authpage.dart';
 import 'package:flutter/material.dart';
+
+import 'views/loginscreen.dart';
 
 void main() {
   runApp(const MyApp());
