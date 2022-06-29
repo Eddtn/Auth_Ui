@@ -45,15 +45,40 @@ class LoginView extends StatelessWidget {
                 height: 70,
                 width: 300,
                 decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Color(0xffE8EAF6),
+                    border: Border.all(color: Colors.grey),
                     borderRadius: BorderRadius.circular(10)),
                 child: Row(children: [
                   Container(
                     height: 70,
                     width: 150,
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Register',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Sign In',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
                   ),
                 ]),
               ),
