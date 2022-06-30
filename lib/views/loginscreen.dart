@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
@@ -20,7 +22,7 @@ class _LoginViewState extends State<LoginView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        backgroundColor: const Color(0xffF5F0F1),
+        backgroundColor: const Color(0xffE7EFF5),
         body: ListView(
           children: [
             Center(
@@ -57,7 +59,7 @@ class _LoginViewState extends State<LoginView> {
                           labelText: 'User Name',
                           hintText: 'Enter Name '),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     TextFormField(
@@ -72,13 +74,109 @@ class _LoginViewState extends State<LoginView> {
                       enableSuggestions: false,
                       autocorrect: false,
                       decoration: InputDecoration(
-                        border: OutlineInputBorder(),
+                        border: const OutlineInputBorder(),
                         labelText: 'Password',
                         hintText: 'Enter Password ',
                         suffixIcon: InkWell(
                             onTap: _tooglePasswordView,
-                            child: Icon(Icons.visibility)),
+                            child: const Icon(Icons.visibility)),
                       ),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Align(
+                      alignment: Alignment.centerRight,
+                      child: Text(
+                        'Recovery Password',
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    Container(
+                      height: 60,
+                      width: 300,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: const Color(0xffFD6B68),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          'Sign In',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    const Text(
+                      'Or  continue with',
+                      style: TextStyle(),
+                    ),
+                    const SizedBox(
+                      height: 40,
+                    ),
+                    Row(
+                      children: [
+                        Container(
+                          height: 60,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffE7EFF5),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 4,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          height: 60,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffE7EFF5),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 4,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 5,
+                        ),
+                        Container(
+                          height: 60,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            color: const Color(0xffE7EFF5),
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 4,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    RichText(
+                      text: const TextSpan(
+                          text: 'Not a Member? ',
+                          style: TextStyle(color: Colors.black),
+                          children: [
+                            TextSpan(
+                              text: 'Register now',
+                              style: TextStyle(color: Colors.blue),
+                            ),
+                          ]),
                     ),
                   ],
                 ),
