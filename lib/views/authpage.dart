@@ -1,3 +1,4 @@
+import 'package:auth_ui/router/route.dart';
 import 'package:flutter/material.dart';
 // import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -57,7 +58,12 @@ class AuthScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                     ),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.popAndPushNamed(
+                            context, emailverificationRoute);
+                        // Navigator.pushNamedAndRemoveUntil(
+                        //     context, registerRoute, (route) => false);
+                      },
                       child: const Text(
                         'Register',
                         style: TextStyle(
@@ -71,7 +77,9 @@ class AuthScreen extends StatelessWidget {
                     width: 30,
                   ),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.popAndPushNamed(context, loginRoute);
+                    },
                     child: const Text(
                       'Sign In',
                       style: TextStyle(

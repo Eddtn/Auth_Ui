@@ -1,5 +1,6 @@
-import 'dart:ui';
-
+import 'package:auth_ui/router/route.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatefulWidget {
@@ -10,6 +11,7 @@ class LoginView extends StatefulWidget {
 }
 
 class _LoginViewState extends State<LoginView> {
+  final GlobalKey _textKey = new GlobalKey();
   bool _isHidden = true;
 
   void _tooglePasswordView() {
@@ -131,6 +133,9 @@ class _LoginViewState extends State<LoginView> {
                               width: 4,
                             ),
                           ),
+                          child: Center(
+                            child: Image.asset('assets/images/instagram.jpeg'),
+                          ),
                         ),
                         const SizedBox(
                           width: 5,
@@ -146,6 +151,9 @@ class _LoginViewState extends State<LoginView> {
                               width: 4,
                             ),
                           ),
+                          child: Center(
+                            child: Image.asset('assets/images/linkin.jpeg'),
+                          ),
                         ),
                         const SizedBox(
                           width: 5,
@@ -159,6 +167,17 @@ class _LoginViewState extends State<LoginView> {
                             border: Border.all(
                               color: Colors.white,
                               width: 4,
+                            ),
+                          ),
+                          child: Container(
+                            height: 30,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              color: const Color(0xffE7EFF5),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(
+                              child: Image.asset('assets/images/fb.jpeg'),
                             ),
                           ),
                         ),
@@ -168,15 +187,21 @@ class _LoginViewState extends State<LoginView> {
                       height: 30,
                     ),
                     RichText(
-                      text: const TextSpan(
-                          text: 'Not a Member? ',
-                          style: TextStyle(color: Colors.black),
-                          children: [
-                            TextSpan(
-                              text: 'Register now',
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                          ]),
+                      // key: _textKey,
+                      text: TextSpan(
+                        text: 'Not a Member? ',
+                        style: TextStyle(color: Colors.black),
+                        children: [
+                          TextSpan(
+                            text: 'Registe,r now',
+                            style: TextStyle(color: Colors.blue),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.popAndPushNamed(context, signupRoute);
+                              },
+                          ),
+                        ],
+                      ),
                     ),
                   ],
                 ),
